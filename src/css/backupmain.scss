@@ -1,0 +1,47 @@
+@import "mq";
+@import "fonts";
+
+// Uncomment for embeds
+//@import "embed";
+
+// Uncomment for full screen (including immersive article main media)
+//@import "fullscreen";
+
+.element-atom,
+.interactive-atom {
+    margin: 0 !important;
+
+    svg {
+        width: 100%;
+        transform: translateY(-200px) rotate(44deg);
+    }
+
+    path[id^=GB]{
+        display: none;
+    }
+
+    path[data-band = '5'] {
+        fill:#680000;
+    }
+
+    path[data-band = '4'] {
+        fill:#680000;
+    }
+
+    path[data-band = '3'] {
+        fill: #680000;
+    }
+
+    path[data-band = '2'] {
+        fill: #9c0000;
+    }
+    path[data-band = '1'] {
+        fill: #d61d00;
+    }
+    path[data-band = '0'] {
+        fill: grey;
+    }
+
+
+
+}

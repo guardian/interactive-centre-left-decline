@@ -1,0 +1,62 @@
+@import "mq";
+@import "fonts";
+
+// Uncomment for embeds
+//@import "embed";
+
+// Uncomment for full screen (including immersive article main media)
+//@import "fullscreen";
+
+.element-atom,
+.interactive-atom {
+    margin: 0 !important;
+
+    svg {
+        width: 200%;
+
+        transform: rotate(0deg) translate(0px,0px);
+    }
+
+    path[id^=GB]{
+        display: none;
+    }
+
+    path {
+        fill:#680000;
+
+        &.gv-band-no-data {
+            fill: #bdbdbd;
+        }
+
+        &.hidden{
+            opacity:0.1;
+            transition: all 3s ease-in-out;
+
+        }
+    }
+
+
+}
+
+.gv-heading {
+    @include fs-headline(5)
+}
+
+.gv-caption#one {
+    opacity: 0;
+    &.visible{
+        background-color: lightgrey;
+        opacity: 1;
+        position:relative;
+        top: 200px;
+        width: 280px;
+        display: block;
+        transition: all 3s ease-in-out;
+    }
+
+
+
+}
+
+
+
