@@ -10,6 +10,7 @@
 .element-atom,
 .interactive-atom {
     margin: 0 !important;
+    
 
     svg {
         width: 200%;
@@ -30,11 +31,19 @@
 
         &.hidden{
             opacity:0.1;
-            transition: all 3s ease-in-out;
+            transition: opacity 3s ease-in-out;
 
         }
     }
 
+
+
+
+}
+
+.hidden {
+    opacity:0.1;
+    transition: all 3s ease-in-out;
 
 }
 
@@ -44,19 +53,68 @@
 
 .gv-caption#one {
     opacity: 0;
+    position:relative;
+    top: 200px;
+    width: 280px;
+    display: block;
     &.visible{
         background-color: lightgrey;
         opacity: 1;
-        position:relative;
-        top: 200px;
-        width: 280px;
-        display: block;
-        transition: all 3s ease-in-out;
+        transition: opacity 3s ease-in-out;
     }
+}
 
+.gv-fader {
+    max-width: 620px;
 
+    display: block;
+    position: relative;
+    margin-bottom: 100%;
+}
 
+h2 + figure {
+        max-width: 400px;
+        display: inline-block;
+        padding-right: 20px;
 }
 
 
 
+ul {
+    vertical-align: top;
+    display: inline-block;
+    max-width: 200px;
+    @include fs-textSans(4);
+    margin-left: 0px;
+    li {
+        display: block;
+    }
+    strong {
+        color:#680000;
+    }
+}
+
+
+
+
+
+.gv-before,.gv-after {
+
+    img {
+        width: inherit;
+        z-index: -1;
+    }
+
+    opacity: 1;
+    width: 100%;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    transition: opacity 3s ease-in-out;
+  
+    &.hidden {
+        opacity:0;
+        transition: opacity 3s ease-in-out;
+    
+    }
+}
