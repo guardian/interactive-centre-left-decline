@@ -36,16 +36,29 @@
 
 }
 
-.gv-heading {
-    @include fs-headline(5)
-}
+.gv-caption {
 
-.gv-caption#one {
-    opacity: 0;
+    &#zero {
+        top: 000px;
+    }
+    &#one {
+        bottom: 0px;
+        right: 0px;
+    }
+
+
+    background-color: lightgrey;
+    opacity: 1;
+    position:absolute;
+    width: 280px;
+    display: block;
+    transition: all 3s ease-in-out;
+
+
     &.visible{
         background-color: lightgrey;
         opacity: 1;
-        position:relative;
+        position:absolute;
         top: 200px;
         width: 280px;
         display: block;
@@ -55,6 +68,57 @@
 
 
 }
+
+.gv-map-container{
+
+    position: relative;
+
+    @media (min-width: 1300px) {
+        margin-left: 240px;
+    }
+
+    @media (max-width: 1300px) and (min-width: 1140px) {
+        margin-left: 160px;
+    }
+
+    @media (max-width: 1140px) and (min-width: 980px) {
+        margin-left: 0px;
+    }
+
+    @media (max-width: 980px) and (min-width: 740px) {
+        margin-left: 0px;
+    }
+
+    max-width: 840px;
+    max-height: 80vh;
+    margin: auto;
+    clear: both;
+
+}
+
+
+h2 + figure {
+    max-width: 400px;
+    display: inline-block;
+    padding-right: 20px;
+}
+
+
+
+ul {
+vertical-align: top;
+display: inline-block;
+max-width: 200px;
+@include fs-textSans(4);
+margin-left: 0px;
+li {
+    display: block;
+}
+strong {
+    color:#680000;
+}
+}
+
 
 
 
