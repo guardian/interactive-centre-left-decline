@@ -46,6 +46,5 @@ function processmap(data) {
 export async function render() {
 	var data = (await axios.get(dataurl)).data;
     var processedmap = await processmap(data.sheets.output)
-    var template = mainTemplate.replace('{{map}}',processedmap)
-    return template;
+    return mainTemplate;
 }

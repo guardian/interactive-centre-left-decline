@@ -1,3 +1,16 @@
+import mapsvg from 'raw-loader!./../assets/output.svg'
+
+var mapboard = document.querySelector('.gv-map-board');
+
+var importMap = new Promise(function(resolve, reject) {
+    mapboard.innerHTML = mapsvg;
+
+    resolve();
+});
+
+
+importMap.then(function(){
+
 var tractive = document.querySelector('.interactive');
 var fallerPaths = [].slice.apply(document.querySelectorAll('path:not([data-band = "0"])'));
 var fallerPathsLessCountries = fallerPaths.filter(function(p) {
@@ -27,3 +40,7 @@ window.addEventListener("scroll", function(e){
    //     removeFallers();
     }
 })
+
+})
+
+
