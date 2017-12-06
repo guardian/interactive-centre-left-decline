@@ -104,20 +104,25 @@ h2 + figure {
 }
 
 
+.content__main-column {
 
-ul {
-vertical-align: top;
-display: inline-block;
-max-width: 200px;
-@include fs-textSans(4);
-margin-left: 0px;
-li {
-    display: block;
+    ul {
+        vertical-align: top;
+        display: inline-block;
+        max-width: 200px;
+        @include fs-textSans(4);
+        margin-left: 0px;
+        li {
+            display: block;
+        }
+        strong {
+            color:#680000;
+        }
+        }
+        
+
 }
-strong {
-    color:#680000;
-}
-}
+
 
 
 
