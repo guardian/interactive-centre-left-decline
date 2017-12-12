@@ -7,6 +7,11 @@
 // Uncomment for full screen (including immersive article main media)
 //@import "fullscreen";
 
+
+ $redaccent: #b51800;
+ $greyaccent: #dcdcdc;
+
+
 .element-atom,
 .interactive-atom {
     margin: 0 !important;
@@ -20,10 +25,10 @@
     }
 
     path {
-        fill:#680000;
+        fill:$redaccent;
 
         &.gv-band-no-data {
-            fill: #bdbdbd;
+            fill: $greyaccent;
         }
 
         &.hidden{
@@ -39,33 +44,105 @@
 .gv-caption {
 
     &#zero {
-        top: 000px;
+        width: 300px;
+        position: relative;
+        margin-bottom: -10%;
+
+        @media (min-width: 1300px) {
+            margin-left: 240px;
+        }
+    
+        @media (max-width: 1300px) and (min-width: 1140px) {
+            margin-left: 160px;
+        }
+    
+        @media (max-width: 1140px) and (min-width: 980px) {
+            margin-left: 0px;
+        }
+    
+        @media (max-width: 980px) and (min-width: 740px) {
+            margin-left: 0px;
+        }
+
     }
     &#one {
-        bottom: 0px;
         right: 0px;
-    }
-
-
-    background-color: lightgrey;
-    opacity: 1;
-    position:absolute;
-    width: 280px;
-    display: block;
-    transition: all 3s ease-in-out;
-
-
-    &.visible{
-        background-color: lightgrey;
-        opacity: 1;
+        opacity: 0;
         position:absolute;
-        top: 200px;
         width: 280px;
         display: block;
-        transition: all 3s ease-in-out;
+        transition: opacity 3s ease-in-out;
+    
+    
+        &.visible{
+            opacity: 1;
+            position:absolute;
+            bottom: 0px;
+            width: 280px;
+            display: block;
+            transition: all 3s ease-in-out;
+        }
+    
+    
     }
 
 
+    p {
+        font-family: "Guardian Egyptian Web", Georgia;
+        display: inline;
+        background-color:#fcfcfc;
+        color: #333;
+        padding: 5px 5px 5px 5px;
+        box-decoration-break: clone;
+        -webkit-box-decoration-break: clone;
+        font-size: 28px;
+        line-height: 32px;
+        font-weight: 200;
+        transform: translateZ(0px);
+        opacity: 0.85;
+
+        @include mq($from: mobile, $until: mobileLandscape) {
+          font-size: 21px;
+          line-height: 32px;
+
+        }
+
+        @include mq($from: mobileLandscape, $until:tablet) {
+          font-size: 24px;
+          line-height: 36px;
+        }
+
+        @include mq($from: tablet) {
+          font-size: 28px;
+          line-height: 40px;
+        }
+    }
+
+    p::before {
+        content: '';
+        background-color:$redaccent;
+        width:4px;
+        display:inline-block;
+        height:38px;
+        transform: translate(-5px,11px);
+
+        @include mq($from: mobile, $until: mobileLandscape) {
+          height:30px;
+          transform: translate(-5px,10px);
+
+        }
+
+        @include mq($from: mobileLandscape, $until:tablet) {
+          height:34px;
+          transform: translate(-5px,10px);
+        }
+
+        @include mq($from: tablet) {
+          height:38px;
+          transform: translate(-5px,11px);
+        }
+
+}
 
 }
 
@@ -90,8 +167,6 @@
     }
 
     max-width: 840px;
-    max-height: 80vh;
-    margin: auto;
     clear: both;
 
 }
@@ -116,7 +191,7 @@ h2 + figure {
             display: block;
         }
         strong {
-            color:#680000;
+            color:$redaccent;
         }
         }
         
@@ -126,4 +201,10 @@ h2 + figure {
 
 
 
-
+.gv-pure-shame {
+    height: 1px;
+    width: 100%;
+    display: block;
+    background-color: red;
+    clear: both;
+}

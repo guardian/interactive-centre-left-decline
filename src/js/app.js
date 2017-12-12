@@ -26,18 +26,17 @@ tractive.addEventListener("click",function(e){
     })
 })
 
-/*
 function removeFallers() {
-    fallerPaths.map(function(p){
-        p.classList.add("hidden");
+    fallerPathsLessCountries.map(function(p){
+        p.classList.toggle("hidden");
     })
     caption1.classList.add("visible")
 }
-*/
+
 window.addEventListener("scroll", function(e){
-    var hbcr = heading.getBoundingClientRect();
+    var hbcr = mapboard.getBoundingClientRect();
     if (hbcr.y < 100 && hbcr.y > 0 ) {
-   //     removeFallers();
+      removeFallers();
     }
 })
 
