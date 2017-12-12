@@ -28,7 +28,7 @@ tractive.addEventListener("click",function(e){
 
 function removeFallers() {
     fallerPathsLessCountries.map(function(p){
-        p.classList.toggle("hidden");
+        p.classList.add("hidden");
     })
     caption1.classList.add("visible")
 }
