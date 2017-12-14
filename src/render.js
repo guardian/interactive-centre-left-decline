@@ -39,7 +39,7 @@ function processmap(data) {
     })
 
     var processedmap = worldmap;
-    fs.writeFileSync('./src/assets/output.svg',$.html())
+    //fs.writeFileSync('./src/assets/output.svg',$.html())
     return $.html();
 }
 
