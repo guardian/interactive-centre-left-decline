@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <style>
+    @font-face {
+      font-family: "Guardian Egyptian Web";
+      src: url("https://interactive.guim.co.uk/fonts/guss-webfonts/GuardianEgyptianWeb/GuardianEgyptianWeb-Regular.eot");
+      src: url("https://interactive.guim.co.uk/fonts/guss-webfonts/GuardianEgyptianWeb/GuardianEgyptianWeb-Regular.eot?#iefix") format("embedded-opentype"), url("https://interactive.guim.co.uk/fonts/guss-webfonts/GuardianEgyptianWeb/GuardianEgyptianWeb-Regular.woff2") format("woff2"), url("https://interactive.guim.co.uk/fonts/guss-webfonts/GuardianEgyptianWeb/GuardianEgyptianWeb-Regular.woff") format("woff"), url("https://interactive.guim.co.uk/fonts/guss-webfonts/GuardianEgyptianWeb/GuardianEgyptianWeb-Regular.ttf") format("truetype"), url("https://interactive.guim.co.uk/fonts/guss-webfonts/GuardianEgyptianWeb/GuardianEgyptianWeb-Regular.svg#GuardianEgyptianWeb-Regular") format("svg");
+      font-weight: 400;
+      font-style: normal;
+      font-stretch: normal;
+    }
+
+    @font-face {
+      font-family: "Guardian Egyptian Web";
+      src: url("https://interactive.guim.co.uk/fonts/guss-webfonts/GuardianEgyptianWeb/GuardianEgyptianWeb-Semibold.eot");
+      src: url("https://interactive.guim.co.uk/fonts/guss-webfonts/GuardianEgyptianWeb/GuardianEgyptianWeb-Semibold.eot?#iefix") format("embedded-opentype"), url("https://interactive.guim.co.uk/fonts/guss-webfonts/GuardianEgyptianWeb/GuardianEgyptianWeb-Semibold.woff2") format("woff2"), url("https://interactive.guim.co.uk/fonts/guss-webfonts/GuardianEgyptianWeb/GuardianEgyptianWeb-Semibold.woff") format("woff"), url("https://interactive.guim.co.uk/fonts/guss-webfonts/GuardianEgyptianWeb/GuardianEgyptianWeb-Semibold.ttf") format("truetype"), url("https://interactive.guim.co.uk/fonts/guss-webfonts/GuardianEgyptianWeb/GuardianEgyptianWeb-Semibold.svg#GuardianEgyptianWeb-Semibold") format("svg");
+      font-weight: 600;
+      font-style: normal;
+      font-stretch: normal;
+    }
+
+    @font-face {
+      font-family: "Guardian Text Sans Web";
+      src: url("https://interactive.guim.co.uk/fonts/guss-webfonts/GuardianTextSansWeb/GuardianTextSansWeb-Regular.eot");
+      src: url("https://interactive.guim.co.uk/fonts/guss-webfonts/GuardianTextSansWeb/GuardianTextSansWeb-Regular.eot?#iefix") format("embedded-opentype"), url("https://interactive.guim.co.uk/fonts/guss-webfonts/GuardianTextSansWeb/GuardianTextSansWeb-Regular.woff2") format("woff2"), url("https://interactive.guim.co.uk/fonts/guss-webfonts/GuardianTextSansWeb/GuardianTextSansWeb-Regular.woff") format("woff"), url("https://interactive.guim.co.uk/fonts/guss-webfonts/GuardianTextSansWeb/GuardianTextSansWeb-Regular.ttf") format("truetype"), url("https://interactive.guim.co.uk/fonts/guss-webfonts/GuardianTextSansWeb/GuardianTextSansWeb-Regular.svg#GuardianTextSansWeb-Regular") format("svg");
+      font-weight: normal/*400;*/
+      font-style: normal;
+      font-stretch: normal;
+    }
+
+    @font-face {
+      font-family: "Guardian Text Sans Web";
+      src: url("https://interactive.guim.co.uk/fonts/guss-webfonts/GuardianTextSansWeb/GuardianTextSansWeb-Bold.eot");
+      src: url("https://interactive.guim.co.uk/fonts/guss-webfonts/GuardianTextSansWeb/GuardianTextSansWeb-Bold.eot?#iefix") format("embedded-opentype"), url("https://interactive.guim.co.uk/fonts/guss-webfonts/GuardianTextSansWeb/GuardianTextSansWeb-Bold.woff2") format("woff2"), url("https://interactive.guim.co.uk/fonts/guss-webfonts/GuardianTextSansWeb/GuardianTextSansWeb-Bold.woff") format("woff"), url("https://interactive.guim.co.uk/fonts/guss-webfonts/GuardianTextSansWeb/GuardianTextSansWeb-Bold.ttf") format("truetype"), url("https://interactive.guim.co.uk/fonts/guss-webfonts/GuardianTextSansWeb/GuardianTextSansWeb-Bold.svg#GuardianTextSansWeb-Bold") format("svg");
+      font-weight: 700;
+      font-style: normal;
+      font-stretch: normal;
+    }
+
+    @font-face {
+      font-family: "Guardian Agate Sans 1 Web";
+      src: url("https://interactive.guim.co.uk/fonts/guss-webfonts/GuardianAgateSans1Web/GuardianAgateSans1Web-Regular.eot");
+      src: url("https://interactive.guim.co.uk/fonts/guss-webfonts/GuardianAgateSans1Web/GuardianAgateSans1Web-Regular.eot?#iefix") format("embedded-opentype"), url("https://interactive.guim.co.uk/fonts/guss-webfonts/GuardianAgateSans1Web/GuardianAgateSans1Web-Regular.woff2") format("woff2"), url("https://interactive.guim.co.uk/fonts/guss-webfonts/GuardianAgateSans1Web/GuardianAgateSans1Web-Regular.woff") format("woff"), url("https://interactive.guim.co.uk/fonts/guss-webfonts/GuardianAgateSans1Web/GuardianAgateSans1Web-Regular.ttf") format("truetype"), url("https://interactive.guim.co.uk/fonts/guss-webfonts/GuardianAgateSans1Web/GuardianAgateSans1Web-Regular.svg#GuardianAgateSans1Web-Regular") format("svg");
+      font-weight: 400;
+      font-style: normal;
+      font-stretch: normal;
+    }
+
+    .f-bar {
+      font-family: 'Guardian Agate Sans 1 Web', monospace;
+      color: #f1f1f1;
+      /* n-5 */
+      text-align: right;
+      line-height: 16px;
+      min-width: 2px;
+      white-space: nowrap;
+      overflow-x: hidden;
+    }
+
+    .country-group {
+      opacity: 0.35;
+    }
+
+    .germany-group {
+      opacity: 1;
+    }
+
+    .germany-text {
+      color: black;
+      font-weight:bolder;
+    }
+
+    .chart-label {
+      font-size: 11px;
+     opacity: 0;
+    }
+
+    .france-label{
+      transform: translate(36px,135px);
+      opacity: 0;
+    }
+
+    .netherlands-label {
+      transform: translate(36px,140px);
+      opacity: 0;
+    }
+
+    .germany-label {
+      transform: translate(36px,45px);
+      opacity: 1;
+    }
+
+    .austria-label {
+      transform: translate(36px,25px);
+      opacity: 0;
+      fill: white;
+    }
+
+    html {
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .d-n {
+      display: none;
+    }
+
+    /* TOTHINK: style or inline */
+
+    .graph {
+      color: #767676;
+      /*n-2*/
+      font-size: 13px;
+      font-family: "Guardian Text Sans Web", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .chart {
+      position: relative;
+    }
+
+    .headline {
+      color: black;
+      font-size: 18px;
+      font-family: 'Guardian Egyptian Web', Georgia, serif;
+      line-height: 24px;
+      margin-bottom: 12px;
+    }
+
+    .standfirst {
+      font-size: 14px;
+      line-height: 18px;
+      margin-top: 12px;
+      margin-bottom: 12px;
+    }
+
+    .legend {
+      line-height: 18px;
+      margin-bottom: 24px;
+    }
+
+    .legend-item {
+      white-space: nowrap;
+      display: inline-block;
+      margin-right: 12px;
+      position: relative;
+    }
+
+    .legend-color {
+      position: absolute;
+      top: 1px;
+      display: inline-block;
+      width: 6px;
+      height: 12px;
+      margin-right: 4px;
+      border-radius: 2px;
+    }
+
+    .legend-label {
+      margin-left: 10px;
+    }
+
+    .axis-x,
+    .axis-y {
+      color: #bdbdbd;
+      /* n-3 */
+      font-family: 'Guardian Agate Sans 1 Web', monospace;
+    }
+
+    .axis-top-text {
+      white-space: nowrap;
+    }
+
+    .label {
+      color: #333;
+      line-height: 18px;
+      vertical-align: top;
+    }
+
+    .label-x {
+      font-size: 12px;
+    }
+
+    .label-x span {
+      word-break: break-word
+    }
+
+    svg {
+      position: absolute;
+      right: 0;
+    }
+
+    svg path {
+      stroke-linejoin: round;
+    }
+
+    footer {
+      font-size: 12px;
+      line-height: 16px;
+      margin-top: 6px;
+      padding-top: 8px;
+      border-top: 1px dotted #bdbdbd;
+      /*n-3*/
+    }
+
+    footer>div {
+      word-break: break-word;
+    }
+
+    .test {
+      font-size: 13px;
+      font-family: 'Guardian Agate Sans 1 Web', monospace;
+      visibility: hidden;
+    }
+
+    /* end of TOTHINK */
+
+    /* for iOS safari mobile */
+
+    body {
+      -webkit-text-size-adjust: 100%;
+    }
+  </style>
+  <script src="https://interactive.guim.co.uk/libs/iframe-messenger/iframeMessenger.js"></script>
+</head>
+
+<div class="graph js-graph" style="width: 100%;">
+  <header class="header">
+    <div class="headline d-n">
+      <span data-offset-key="f30pt-0-0" style="font-weight: bold;">
+        <span data-text="true">Headline ...</span>
+      </span>
+    </div>
+    <div class="standfirst d-n">
+      <span data-offset-key="eohge-0-0">
+        <span data-text="true">Standfirst ...</span>
+      </span>
+    </div>
+    <div class="legend" style="margin-left: 0px;">
+     <div class="legend-item">
+        <span class="legend-color" style="background-color: rgb(181, 24, 0);"></span>
+        <span class="legend-label">
+          <span data-offset-key="bmul2-0-0">
+            <span data-text="true">% vote share 2017</span>
+          </span>
+        </span>
+      </div>
+      <div class="legend-item">
+          <span class="legend-color" style="background-color: rgb(223, 223, 223);"></span>
+          <span class="legend-label">
+            <span data-offset-key="2vprp-0-0">
+              <span data-text="true">previous</span>
+            </span>
+          </span>
+        </div>
+       
+    </div>
+  </header>
+  <div data-id="colGroup" data-res-y="false" class="chart js-chart" style="margin-top: 0px; margin-bottom: 30px; padding-bottom: 60%;">
+    <div class="axis-y" style="position: absolute; width: 100%; height: 100%;">
+      <div class="axis-y-grid" style="position: absolute; top: 100%; width: 100%; border-bottom: 1px solid rgb(220, 220, 220); margin-top: -19px; line-height: 18px;">
+        <span class="axis-y-text" style="display: inline-block;">
+          <span data-offset-key="6l6hr-0-0">
+            <span data-text="true">0</span>
+          </span>
+        </span>
+      </div>
+      <div class="axis-y-grid" style="position: absolute; top: 82.54%; width: 100%; border-bottom: 1px dotted rgb(220, 220, 220); margin-top: -19px; line-height: 18px;">
+        <span class="axis-y-text" style="display: inline-block;">
+          <span data-offset-key="bftaj-0-0">
+            <span data-text="true">5</span>
+          </span>
+        </span>
+      </div>
+      <div class="axis-y-grid" style="position: absolute; top: 65.07%; width: 100%; border-bottom: 1px dotted rgb(220, 220, 220); margin-top: -19px; line-height: 18px;">
+        <span class="axis-y-text" style="display: inline-block;">
+          <span data-offset-key="8gbg9-0-0">
+            <span data-text="true">10</span>
+          </span>
+        </span>
+      </div>
+      <div class="axis-y-grid" style="position: absolute; top: 47.61%; width: 100%; border-bottom: 1px dotted rgb(220, 220, 220); margin-top: -19px; line-height: 18px;">
+        <span class="axis-y-text" style="display: inline-block;">
+          <span data-offset-key="4c48f-0-0">
+            <span data-text="true">15</span>
+          </span>
+        </span>
+      </div>
+      <div class="axis-y-grid" style="position: absolute; top: 30.14%; width: 100%; border-bottom: 1px dotted rgb(220, 220, 220); margin-top: -19px; line-height: 18px;">
+        <span class="axis-y-text" style="display: inline-block;">
+          <span data-offset-key="94uon-0-0">
+            <span data-text="true">20</span>
+          </span>
+        </span>
+      </div>
+      <div class="axis-y-grid" style="position: absolute; top: 12.68%; width: 100%; border-bottom: 1px dotted rgb(220, 220, 220); margin-top: -19px; line-height: 18px;">
+        <span class="axis-y-text" style="display: inline-block;">
+          <span data-offset-key="ej5vp-0-0">
+            <span data-text="true">25</span>
+          </span>
+        </span>
+      </div>
+    </div>
+    <!-- react-empty: 2227 -->
+    <svg viewBox="0 0 300 180" preserveAspectRatio="none" style="width: calc(100% - 20px); height: calc(100% + 1px);">
+      <g class="group france-group country-group" transform="translate(0,0)" fill="false" style="width: calc(100% - 79px); display: inline-block;">
+        <rect x="0" y="0" width="33.72781065088757" height="180" fill="#dfdfdf" class="">
+          <title>28.63</title>
+        </rect>
+        <rect x="35.50295857988166" y="140.01397135871463" width="33.72781065088757" height="39.98602864128537" fill="#b51800"
+          class="">
+          <title>6.36</title>
+        </rect>
+        <text class="chart-label france-label">6.4%</text>
+      </g>
+      <g class="group netherlands-group country-group" transform="translate(76.92307692307692,0)" fill="false" style="width: calc(100% - 79px); display: inline-block;">
+        <rect x="0" y="23.828152287809985" width="33.72781065088757" height="156.17184771219002" fill="#dfdfdf" class="">
+          <title>24.84</title>
+        </rect>
+        <rect x="35.50295857988166" y="144.16346489696122" width="33.72781065088757" height="35.836535103038784" fill="#b51800"
+          class="">
+          <title>5.7</title>
+        </rect>
+        <text class="chart-label netherlands-label">5.7%</text>
+
+      </g>
+      <g class="group germany-group country-group" transform="translate(153.84615384615384,0)" fill="false" style="width: calc(100% - 79px); display: inline-block;">
+        <rect x="0" y="18.42123646524624" width="33.72781065088757" height="161.57876353475376" fill="#dfdfdf" class="">
+          <title>25.7</title>
+        </rect>
+        <rect x="35.50295857988166" y="51.11421585749213" width="33.72781065088757" height="128.88578414250787" fill="#b51800"
+          class="">
+          <title>20.5</title>
+        </rect>
+        <text class="chart-label germany-label">20.5%</text>
+
+      </g>
+      <g class="group austria-group country-group" transform="translate(230.76923076923077,0)" fill="false" style="width: calc(100% - 79px); display: inline-block;">
+        <rect x="0" y="11.505413901501896" width="33.72781065088757" height="168.4945860984981" fill="#dfdfdf" class="">
+          <title>26.8</title>
+        </rect>
+        <rect x="35.50295857988166" y="10.876702759343345" width="33.72781065088757" height="169.12329724065665" fill="#b51800"
+          class="">
+          <title>26.9</title>
+        </rect>
+        <text class="chart-label austria-label">26.9%</text>
+
+      </g>
+    </svg>
+    <div class="label-x" data-x-bottom="true" data-y-indent="20" style="position: absolute; top: calc(100% - 1px); right: 0px; width: calc(100% - 20px);">
+      <div class="label" style="position: absolute; top: 8px; left: 0%; width: 23.5%; line-height: 14px; padding-top: 2px; text-align: left;">
+        <span data-offset-key="5adlh-0-0">
+          <span data-text="true" class="country-text france-text">France</span>
+        </span>
+      </div>
+      <div class="label" style="position: absolute; top: 8px; left: 25.5%; width: 23.5%; line-height: 14px; padding-top: 2px; text-align: left;">
+        <span data-offset-key="8mina-0-0">
+          <span data-text="true" class="country-text netherlands-text">Neth.</span>
+        </span>
+      </div>
+      <div class="label" style="position: absolute; top: 8px; left: 51%; width: 23.5%; line-height: 14px; padding-top: 2px; text-align: left;">
+        <span data-offset-key="bbah7-0-0">
+          <span data-text="true" class="country-text germany-text">Germany</span>
+        </span>
+      </div>
+      <div class="label" style="position: absolute; top: 8px; left: 76.5%; width: 23.5%; line-height: 14px; padding-top: 2px; text-align: left;">
+        <span data-offset-key="e65q3-0-0">
+          <span data-text="true" class="country-text austria-text">Austria</span>
+        </span>
+      </div>
+    </div>
+  </div>
+  <footer class=" d-n">
+    <span data-offset-key="a1qfl-0-0">
+      <span data-text="true">Guardian Graphic</span>
+    </span>
+  </footer>
+  <span class="test js-test-res"></span>
+</div>
+
+<body>
+  <script>
+    var elChart = document.querySelector(".js-chart")
+    var elAxisX = document.querySelector(".axis-x")
+    var elsText = elAxisX ? elAxisX.querySelectorAll(".axis-x-text") : []
+    var indentL = elAxisX ? parseInt(elAxisX.dataset.lIndent, 10) : 0
+    var extendR = elAxisX ? parseInt(elAxisX.dataset.rIndent, 10) : 0
+    var isBarBased = elChart.getAttribute("data-id").toLowerCase().indexOf("bar") > -1
+
+    // responsive
+    function responsive() {
+      iframeMessenger.resize()  // 1
+      rescaleSvgElements()      // 2
+      updateYLabelWidths()      // 3
+      updateXAxisTextPosition() // 4
+      updateChartHeight()       // 5
+    }
+    responsive()
+
+    // handle event
+    var timeout = null
+    window.addEventListener('resize', function (evt) {
+      if (timeout) window.clearTimeout(timeout)
+      timeout = window.setTimeout(function () {
+        responsive()
+        timeout = null
+      }, 200)
+    });
+
+    /* 1. iframe resize */
+    // iframeMessenger for embed in guardian's page
+
+    /* 2. svg path or circle rescale */
+    function rescaleSvgElements() {
+      var width = 300
+      var elSvg = document.querySelector("svg")
+      if (elSvg) {
+        var svgWidth = elSvg.getBoundingClientRect().width
+        // line chart
+        var strokeWidth = Math.round(2 * width * 10 / svgWidth) / 10
+        var paths = Array.prototype.slice.call(document.querySelectorAll("path"))
+        paths.forEach(function (path) { path.setAttribute("stroke-width", strokeWidth); })
+        // plot chart
+        var r = Math.round(3 * width * 10 / svgWidth) / 10
+        var circles = Array.prototype.slice.call(document.querySelectorAll("circle"))
+        circles.forEach(function (circle) { circle.setAttribute("r", r); })
+      }    
+}
+
+    /* 3. y label width update */
+    function updateYLabelWidths() {
+      if (elChart.getAttribute("data-res-y") === "false") return
+
+      const elRows = [...elChart.querySelectorAll(".row")]
+      const elGroups = [...elChart.querySelectorAll(".group")]
+      const elLegend = document.querySelector(".legend")
+      const labelWidth = elChart.querySelector(".label").offsetWidth
+      const chartWidth = elChart.offsetWidth
+      const isInline = labelWidth <= chartWidth / 3
+
+      elRows.forEach(el => {
+        el.style.height = isInline ? "24px" : "auto"
+      })
+      elGroups.forEach(el => {
+        el.style.width = isInline ? "calc(" + 100 + "% - " + labelWidth + "px)" : "100%"
+        el.style.display = isInline ? "inline-block" : "block"
+      })
+
+      elAxisX.style.width = "calc(100% - " + ((isInline ? labelWidth : 0) + indentL + extendR + 1) + "px)"
+      elLegend.style.marginLeft = isInline ? labelWidth + "px" : 0
+    }
+
+    /* 4. x axis text position update */
+    function updateXAxisTextPosition() {
+      if (!elAxisX) return
+
+      var elsTick = elAxisX.querySelectorAll(".axis-x-tick")
+      var elTest = document.querySelector(".js-test-res")
+
+      // a. default width / left
+      var axisXWidth = elAxisX.offsetWidth
+      var maxWidth = elsTick[1].offsetLeft - elsTick[0].offsetLeft
+      var txtWidths = [].slice.call(elsText).map((el, i) => {
+        elTest.textContent = el.textContent
+        var txtWidth = elTest.offsetWidth + 2
+        var resWidth = Math.min(txtWidth, maxWidth)
+        el.style.width = resWidth + "px"
+        el.style.left = (elsTick[i].offsetLeft - resWidth / 2) * 100 / axisXWidth + "%"
+        el.style.textAlign = "center"
+        return txtWidth
+      })
+      elTest.textContent = ""
+
+      // b. adjust width if multi lines
+      var isMultiLine = txtWidths.find(w => w > maxWidth)
+      if (isMultiLine) {
+        [].slice.call(elsText).forEach((el, i) => {
+          var txtWidth = el.querySelector("span").offsetWidth + 1
+          var resWidth = Math.min(txtWidth, maxWidth)
+          el.style.width = resWidth + "px"
+          el.style.left = (elsTick[i].offsetLeft - resWidth / 2) * 100 / axisXWidth + "%"
+        })
+      }
+
+      // c. adjust two ends if out of frame
+      var iLast = elsTick.length - 1
+      var indent = parseInt(elAxisX.dataset.yIndent, 10) + indentL
+      var textStrLeft = (indent + elsTick[0].offsetLeft) - elsText[0].offsetWidth / 2
+      var textEndRight = (axisXWidth + extendR - elsTick[iLast].offsetLeft) - elsText[iLast].offsetWidth / 2
+      if (textStrLeft < 0) {
+        elsText[0].style.left = ((isBarBased ? 0 : 1) - indent) + "px"
+        elsText[0].style.textAlign = "left"
+      }
+      if (textEndRight < 0) {
+        elsText[iLast].style.left = "auto"
+        elsText[iLast].style.right = (-1) - extendR + "px"
+        elsText[iLast].style.textAlign = "right"
+      }
+    }
+
+    /* chart height update */
+    function updateChartHeight() {
+      var elsLabel = document.querySelectorAll(".label-x .label")
+      var isAxisXBottom = elAxisX ? (elAxisX.dataset.xBottom === "true") : false
+      if (isAxisXBottom || elsLabel.length > 0) {
+        var elsAll = [].slice.call(elsText).concat([].slice.call(elsLabel))
+        var heights = elsAll.map(el => Math.ceil(el.offsetHeight))
+        var maxHeight = Math.max.apply(null, heights)
+        elChart.style.marginBottom = (maxHeight + 14) + "px"
+      }
+    }
+  </script>
+</body>
+
+</html>
