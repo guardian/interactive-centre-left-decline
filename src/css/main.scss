@@ -33,7 +33,7 @@
 
         &.hidden{
             opacity:0.1;
-            transition: all 3s ease-in-out;
+            transition: opacity 2s ease-in-out;
 
         }
     }
@@ -42,6 +42,8 @@
 }
 
 .gv-caption {
+
+    z-index: 10;
 
     &#zero {
         width: 300px;
@@ -71,7 +73,7 @@
         position:absolute;
         width: 280px;
         display: block;
-        transition: opacity 3s ease-in-out;
+        transition: opacity 2s ease-in-out;
     
     
         &.visible{
@@ -80,7 +82,7 @@
             bottom: 0px;
             width: 280px;
             display: block;
-            transition: all 3s ease-in-out;
+            transition: all 2s ease-in-out;
         }
     
     
@@ -183,10 +185,16 @@ figure + p {
 }
 
 figure[data-alt=comparison] {
-    max-width: 860px !important;
+    max-width: 620px !important;
+    width: 100%;
 }
 
 .content__main-column {
+
+    a {
+        @include fs-textSans(4);
+        color: $redaccent;
+    }
 
     ul {
         vertical-align: top;

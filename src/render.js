@@ -1,5 +1,5 @@
 import mainTemplate from './src/templates/main.html!text'
-import worldmap from './src/templates/wholeunrotated.svg!text'
+import worldmap from './src/templates/wholeuntrotatedb.svg!text'
 import axios from 'axios'
 import cheerio from 'cheerio'
 import fs from 'fs'
@@ -39,7 +39,7 @@ function processmap(data) {
     })
 
     var processedmap = worldmap;
-    //fs.writeFileSync('./src/assets/output.svg',$.html())
+    fs.writeFileSync('./src/assets/output.svg',$.html())
     return $.html();
 }
 
