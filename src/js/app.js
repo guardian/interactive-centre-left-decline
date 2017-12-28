@@ -37,7 +37,6 @@ importMap.then(function(){
 
   window.addEventListener("scroll", function(e){
       if(!mapTransitioned){
-        console.log('klsjdflkjsdf')
         var hbcr = mapboard.getBoundingClientRect();
         if (hbcr.top < 100 && hbcr.top > 0 ) {
           removeFallers();
